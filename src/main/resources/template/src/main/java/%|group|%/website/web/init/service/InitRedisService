@@ -1,0 +1,30 @@
+package %|group|%.website.web.init.service;
+
+import %|group|%.core.cache.RedisCache;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
+
+/**
+ * 初始化redis
+ */
+@Service
+public class InitRedisService {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Async
+    public void asyncInit() throws Exception {
+        if (logger.isDebugEnabled()) {
+            logger.debug("清空redis缓存");
+        }
+
+        this.redisCache.flushAllRetainSession();
+    }
+
+}

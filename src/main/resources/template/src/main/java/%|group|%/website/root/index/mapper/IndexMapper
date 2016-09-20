@@ -1,0 +1,8 @@
+package %|group|%.website.root.index.mapper;
+
+import %|group|%.core.mybatis.annotation.MyBatisMapper;
+
+@MyBatisMapper
+public interface IndexMapper {
+
+}

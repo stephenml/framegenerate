@@ -1,0 +1,5 @@
+input.encoding = UTF-8
+output.encoding = UTF-8
+
+velocimacro.library = velocity/macros/common.vm
+velocimacro.library.autoreload = true

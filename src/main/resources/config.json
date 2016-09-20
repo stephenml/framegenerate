@@ -1,0 +1,840 @@
+{
+	"license" : "license.txt",
+	"files" : [
+		{
+			"name" : "libs",
+			"type" : "folder",
+			"files" : []
+		},
+		{
+			"name" : "src",
+			"type" : "folder",
+			"files" : [
+				{
+					"name" : "main",
+					"type" : "folder",
+					"files" : [
+						{
+							"name" : "java",
+							"type" : "folder",
+							"files" : [
+								{
+									"name" : "%|group|%",
+									"type" : "package",
+									"files" : [
+										{
+											"name" : "constant",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "Constants",
+													"type" : "file",
+													"extension" : "java"
+												},
+												{
+													"name" : "ServiceConstants",
+													"type" : "file",
+													"extension" : "java"
+												}
+											]
+										},
+										{
+											"name" : "core",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "cache",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "RedisCache",
+															"type" : "file",
+															"extension" : "java"
+														},
+														{
+															"name" : "RedisCacheImpl",
+															"type" : "file",
+															"extension" : "java"
+														}
+													]
+												},
+												{
+													"name" : "mybatis",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "annotation",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "MyBatisMapper",
+																	"type" : "file",
+																	"extension" : "java"
+																}
+															]
+														},
+														{
+															"name" : "page",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "PageHelper",
+																	"type" : "file",
+																	"extension" : "java"
+																},
+																{
+																	"name" : "PageInfo",
+																	"type" : "file",
+																	"extension" : "java"
+																},
+																{
+																	"name" : "PageList",
+																	"type" : "file",
+																	"extension" : "java"
+																}
+															]
+														},
+														{
+															"name" : "BaseMapper",
+															"type" : "file",
+															"extension" : "java"
+														},
+														{
+															"name" : "BaseService",
+															"type" : "file",
+															"extension" : "java"
+														}
+													]
+												},
+												{
+													"name" : "utils",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "BeanMapUtil",
+															"type" : "file",
+															"extension" : "java"
+														},
+														{
+															"name" : "PropertyUtil",
+															"type" : "file",
+															"extension" : "java"
+														},
+														{
+															"name" : "SerializeUtil",
+															"type" : "file",
+															"extension" : "java"
+														}
+													]
+												},
+												{
+													"name" : "web",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "VelocityLayoutView",
+															"type" : "file",
+															"extension" : "java"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name" : "utils",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "PathUtil",
+													"type" : "file",
+													"extension" : "java"
+												}
+											]
+										},
+										{
+											"name" : "website",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "root",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "index",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "controller",
+																	"type" : "package",
+																	"files" : [
+																		{
+																			"name" : "IndexController",
+																			"type" : "file",
+																			"extension" : "java"
+																		}
+																	]
+																},
+																{
+																	"name" : "mapper",
+																	"type" : "package",
+																	"files" : [
+																		{
+																			"name" : "IndexMapper",
+																			"type" : "file",
+																			"extension" : "java"
+																		}
+																	]
+																},
+																{
+																	"name" : "service",
+																	"type" : "package",
+																	"files" : [
+																		{
+																			"name" : "IndexService",
+																			"type" : "file",
+																			"extension" : "java"
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"name" : "web",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "init",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "service",
+																	"type" : "package",
+																	"files" : [
+																		{
+																			"name" : "InitRedisService",
+																			"type" : "file",
+																			"extension" : "java"
+																		}
+																	]
+																},
+																{
+																	"name" : "InitRedis",
+																	"type" : "file",
+																	"extension" : "java"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name" : "resources",
+							"type" : "folder",
+							"files" : [
+								{
+									"name" : "%|group|%",
+									"type" : "package",
+									"files" : [
+										{
+											"name" : "website",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "root",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "index",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "mapper",
+																	"type" : "package",
+																	"files" : [
+																		{
+																			"name" : "IndexMapper",
+																			"type" : "file",
+																			"extension" : "xml"
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name" : "mybatis",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "mybatis-config",
+											"type" : "file",
+											"extension" : "xml"
+										}
+									]
+								},
+								{
+									"name" : "properties",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "config",
+											"type" : "file",
+											"extension" : "properties"
+										},
+										{
+											"name" : "resource",
+											"type" : "file",
+											"extension" : "properties"
+										}
+									]
+								},
+								{
+									"name" : "spring",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "config",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "spring-config",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-develop-config",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-mvc-config",
+													"type" : "file",
+													"extension" : "xml"
+												}
+											]
+										},
+										{
+											"name" : "core",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "spring-core-cache",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-core-common",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-core-database",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-core-service",
+													"type" : "file",
+													"extension" : "xml"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name" : "velocity",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "macros",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "common",
+													"type" : "file",
+													"extension" : "vm"
+												}
+											]
+										},
+										{
+											"name" : "toolbox",
+											"type" : "file",
+											"extension" : "xml"
+										},
+										{
+											"name" : "velocity",
+											"type" : "file",
+											"extension" : "properties"
+										}
+									]
+								},
+								{
+									"name" : "logback",
+									"type" : "file",
+									"extension" : "xml"
+								}
+							]
+						},
+						{
+							"name" : "webapp",
+							"type" : "folder",
+							"files" : [
+								{
+									"name" : "resource",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "css",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "font-awesome",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "css",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "font-awesome.css",
+																	"type" : "file",
+																	"extension" : ""
+																}
+															]
+														},
+														{
+															"name" : "fonts",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "FontAwesome.otf",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "fontawesome-webfont.eot",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "fontawesome-webfont.svg",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "fontawesome-webfont.ttf",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "fontawesome-webfont.woff",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "fontawesome-webfont.woff2",
+																	"type" : "file",
+																	"extension" : ""
+																}
+															]
+														}
+													]
+												},
+												{
+													"name" : "main",
+													"type" : "file",
+													"extension" : "css"
+												}
+											]
+										},
+										{
+											"name" : "images",
+											"type" : "folder",
+											"files" : []
+										},
+										{
+											"name" : "js",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "modules",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "common",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "all",
+																	"type" : "file",
+																	"extension" : "js"
+																}
+															]
+														},
+														{
+															"name" : "gallery",
+															"type" : "folder",
+															"files" : []
+														},
+														{
+															"name" : "jquery",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "jquery",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "1.12.0",
+																			"type" : "folder",
+																			"files" : [
+																				{
+																					"name" : "jquery",
+																					"type" : "file",
+																					"extension" : "js"
+																				},
+																				{
+																					"name" : "jquery-debug",
+																					"type" : "file",
+																					"extension" : "js"
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"name" : "jquery-poshytip",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "1.2",
+																			"type" : "folder",
+																			"files" : [
+																				{
+																					"name" : "jquery-poshytip",
+																					"type" : "file",
+																					"extension" : "js"
+																				},
+																				{
+																					"name" : "jquery-poshytip-debug",
+																					"type" : "file",
+																					"extension" : "js"
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"name" : "seajs",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "seajs",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "2.1.1",
+																			"type" : "folder",
+																			"files" : [
+																				{
+																					"name" : "sea",
+																					"type" : "file",
+																					"extension" : "js"
+																				},
+																				{
+																					"name" : "sea-debug",
+																					"type" : "file",
+																					"extension" : "js"
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"name" : "seajs-map",
+																	"type" : "folder",
+																	"files" : []
+																},
+																{
+																	"name" : "seajs-style",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "1.0.2",
+																			"type" : "folder",
+																			"files" : [
+																				{
+																					"name" : "seajs-style",
+																					"type" : "file",
+																					"extension" : "js"
+																				},
+																				{
+																					"name" : "seajs-style-debug",
+																					"type" : "file",
+																					"extension" : "js"
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"name" : "seajs-text",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "1.0.2",
+																			"type" : "folder",
+																			"files" : [
+																				{
+																					"name" : "seajs-text",
+																					"type" : "file",
+																					"extension" : "js"
+																				},
+																				{
+																					"name" : "seajs-text-debug",
+																					"type" : "file",
+																					"extension" : "js"
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"name" : "seajs-config",
+																	"type" : "file",
+																	"extension" : "js"
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"name" : "modules",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "gallery",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "Makefile",
+															"type" : "file",
+															"extension" : ""
+														}
+													]
+												},
+												{
+													"name" : "jquery",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "jquery",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "jquery",
+																	"type" : "file",
+																	"extension" : "js"
+																},
+																{
+																	"name" : "Makefile",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "package",
+																	"type" : "file",
+																	"extension" : "json"
+																}
+															]
+														},
+														{
+															"name" : "jquery-poshytip",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "jquery-poshytip",
+																	"type" : "file",
+																	"extension" : "js"
+																},
+																{
+																	"name" : "Makefile",
+																	"type" : "file",
+																	"extension" : ""
+																},
+																{
+																	"name" : "package",
+																	"type" : "file",
+																	"extension" : "json"
+																}
+															]
+														}
+													]
+												},
+												{
+													"name" : "root",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "common",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "tpl",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "page.tpl",
+																			"type" : "file",
+																			"extension" : "html"
+																		}
+																	]
+																},
+																{
+																	"name" : "view-empty",
+																	"type" : "file",
+																	"extension" : "js"
+																},
+																{
+																	"name" : "view-page",
+																	"type" : "file",
+																	"extension" : "js"
+																},
+																{
+																	"name" : "view-tips",
+																	"type" : "file",
+																	"extension" : "js"
+																}
+															]
+														},
+														{
+															"name" : "index",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "tpl",
+																	"type" : "folder",
+																	"files" : [
+																		{
+																			"name" : "index.tpl",
+																			"type" : "file",
+																			"extension" : "html"
+																		}
+																	]
+																},
+																{
+																	"name" : "index",
+																	"type" : "file",
+																	"extension" : "js"
+																}
+															]
+														},
+														{
+															"name" : "main",
+															"type" : "folder",
+															"files" : [
+																{
+																	"name" : "main",
+																	"type" : "file",
+																	"extension" : "js"
+																},
+																{
+																	"name" : "router",
+																	"type" : "file",
+																	"extension" : "js"
+																}
+															]
+														},
+														{
+															"name" : "Makefile",
+															"type" : "file",
+															"extension" : ""
+														},
+														{
+															"name" : "package",
+															"type" : "file",
+															"extension" : "json"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name" : "WEB-INF",
+									"type" : "folder",
+									"files" : [
+										{
+											"name" : "views",
+											"type" : "folder",
+											"files" : [
+												{
+													"name" : "layout",
+													"type" : "folder",
+													"files" : [
+														{
+															"name" : "layout",
+															"type" : "file",
+															"extension" : "vm"
+														}
+													]
+												},
+												{
+													"name" : "index",
+													"type" : "file",
+													"extension" : "vm"
+												}
+											]
+										},
+										{
+											"name" : "web",
+											"type" : "file",
+											"extension" : "xml"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "build",
+			"type" : "file",
+			"extension" : "gradle"
+		},
+		{
+			"name" : "libraries",
+			"type" : "file",
+			"extension" : "gradle"
+		},
+		{
+			"name" : "tasks",
+			"type" : "file",
+			"extension" : "gradle"
+		},
+		{
+			"name" : "settings",
+			"type" : "file",
+			"extension" : "gradle"
+		}
+	]
+}

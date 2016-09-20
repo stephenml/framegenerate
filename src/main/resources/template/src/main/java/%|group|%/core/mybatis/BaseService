@@ -1,0 +1,64 @@
+package %|group|%.core.mybatis;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+public abstract class BaseService<T, PK extends Serializable, E> {
+
+	protected BaseMapper<T, PK, E> baseMapper;
+
+	protected void setBaseMapper(BaseMapper<T, PK, E> baseMapper) {
+		this.baseMapper = baseMapper;
+	}
+
+	protected BaseMapper<T, PK, E> getBaseMapper() {
+		return baseMapper;
+	}
+
+	public int countByExample(E example) {
+		return getBaseMapper().countByExample(example);
+	}
+
+	public int deleteByExample(E example) {
+		return getBaseMapper().deleteByExample(example);
+	}
+
+	public int deleteByPrimaryKey(PK id) {
+		return getBaseMapper().deleteByPrimaryKey(id);
+	}
+
+	public int insert(T record) {
+		return getBaseMapper().insert(record);
+	}
+
+	public int insertSelective(T record) {
+		return getBaseMapper().insertSelective(record);
+	}
+
+	public List<T> selectByExample(E example) {
+		return getBaseMapper().selectByExample(example);
+	}
+
+	public T selectByPrimaryKey(PK id) {
+		return getBaseMapper().selectByPrimaryKey(id);
+	}
+
+	public int updateByExampleSelective(@Param("record") T record, @Param("example") E example) {
+		return getBaseMapper().updateByExampleSelective(record, example);
+	}
+
+	public int updateByExample(@Param("record") T record, @Param("example") E example) {
+		return getBaseMapper().updateByExample(record, example);
+	}
+
+	public int updateByPrimaryKeySelective(T record) {
+		return getBaseMapper().updateByPrimaryKeySelective(record);
+	}
+
+	public int updateByPrimaryKey(T record) {
+		return getBaseMapper().updateByPrimaryKey(record);
+	}
+
+}

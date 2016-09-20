@@ -1,0 +1,16 @@
+group '%|group|%'
+version '%|version|%'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply from: 'libraries.gradle'
+apply from: 'tasks.gradle'
+
+sourceCompatibility = 1.8
+
+archivesBaseName = 'ROOT'
+
+repositories {
+    mavenCentral()
+}

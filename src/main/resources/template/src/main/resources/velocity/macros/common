@@ -1,0 +1,72 @@
+## seajs 引入宏
+## 使用: #seajs("root", ["index/index"])
+#macro(seajs $website, $modulelist)
+
+    ## 开发状态
+    #if(${attributes.production} == 'develop')
+        #set($production = false)
+    ## 发布状态
+    #elseif(${attributes.production} == 'release')
+        #set($production = true)
+    ## 默认开发状态
+    #else
+        #set($production = false)
+    #end
+
+    ## 发布状态
+    #if($production)
+        <script type="text/javascript" src="$!{attributes.domainJs}/modules/seajs/seajs/2.1.1/sea.js"></script>
+        <script type="text/javascript">
+            ## 根路径
+            var ctx = '$!{attributes.path}';
+            ## sessionId
+            var jsessionId = '$!{attributes.jsessionId}';
+            seajs.production = $production;
+            seajs.config({
+                paths: {
+                    resource: '$!{attributes.domainJs}'
+                },
+                vars: {
+                    lang: '$lang'
+                },
+                base: '$!{attributes.domainJs}/modules'
+            });
+        </script>
+        <script type="text/javascript" src="$!{attributes.domainJs}/modules/seajs/seajs-config.js?${_version}"></script>
+        <script type="text/javascript" src="$!{attributes.domainJs}/modules/seajs/seajs-map/seajs-map-$!{website}.js?${_version}"></script>
+        <script type="text/javascript" >
+                ## 加载js
+                #foreach($module in $modulelist)
+                    seajs.use('$!{website}/$!{module}');
+                #end
+        </script>
+    ## 开发状态
+    #else
+        <script type="text/javascript" src="${attributes.path}/resource/js/modules/seajs/seajs/2.1.1/sea-debug.js"></script>
+        <script type="text/javascript" >
+            ## 根路径
+            var ctx = '$!{attributes.path}';
+            ## sessionId
+            var jsessionId = '$!{attributes.jsessionId}';
+            seajs.production = $production;
+            seajs.config({
+                paths: {
+                    resource: '${attributes.path}/resource/js'
+                },
+                vars: {
+                    lang: '$lang'
+                },
+                base: '${attributes.path}/resource/js/modules',
+                map:[]
+            });
+        </script>
+        <script type="text/javascript" src="${attributes.path}/resource/js/modules/seajs/seajs-config.js?${_version}"></script>
+        <script type="text/javascript">
+                ## 加载js
+                #foreach($module in $modulelist)
+                    seajs.use('$!{attributes.path}/resource/modules/$!{website}/$!{module}');
+                #end
+        </script>
+    #end
+
+#end

@@ -1,0 +1,17 @@
+# Java #
+*.class
+
+# Package Files #
+*.war
+*.ear
+
+# Folders #
+.gradle/
+.idea/
+.settings/
+build/
+bin/
+.classpath
+.project
+classes/
+src/test/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		调用方法： 
+		1: PropertyUtil.getProperty(key[, defaultValue])
+		2: 使用注解 
+			@Value("#{prop.getProperty('key')}")
+			private String propStr = "defaultValue";
+	-->
+	<bean id="prop" class="%|group|%.core.utils.PropertyUtil">
+		<property name="fileEncoding" value="utf-8"/>
+        <property name="locations">  
+            <list>
+				<value>classpath:properties/config.properties</value>
+				<value>classpath:properties/resource.properties</value>
+			</list>
+        </property>  
+    </bean>  
+
+</beans>

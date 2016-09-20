@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/cache
+	    http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<cache:annotation-driven cache-manager="redisCacheManager"/>
+
+	<bean id="redisCacheManager"
+		  class="org.springframework.data.redis.cache.RedisCacheManager"
+		  c:template-ref="redisTemplate"/>
+
+	<bean id="redisTemplate" 
+		  class="org.springframework.data.redis.core.RedisTemplate"
+		  p:connectionFactory-ref="jedisConnectionFactory"/>
+
+	<bean id="redisCache" 
+		  class="%|group|%.core.cache.RedisCacheImpl"
+		  p:redisTemplate-ref="redisTemplate" 
+		  p:globalDbIndex="${redis.dbIndex}"/>
+
+	<bean id="jedisConnectionFactory"
+		  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"  
+		  destroy-method="destroy"
+		  p:hostName="${redis.ip}"
+		  p:port="${redis.port}"
+		  p:poolConfig-ref="jedisPoolConfig"/>
+
+	<bean id="jedisPoolConfig"
+		  class="redis.clients.jedis.JedisPoolConfig"
+		  p:maxTotal="${redis.pool.maxTotal}"
+		  p:maxIdle="${redis.pool.maxIdle}"
+		  p:testOnBorrow="${redis.pool.testOnBorrow}"/>
+
+</beans>

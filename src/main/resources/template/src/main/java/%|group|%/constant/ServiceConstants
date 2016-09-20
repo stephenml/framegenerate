@@ -1,0 +1,12 @@
+package %|group|%.constant;
+
+/**
+ * 服务常量配置
+ */
+public interface ServiceConstants extends Constants {
+
+    /** redis 相关 */
+    String INIT_REDIS = "redis";
+    String INIT_ALL = "all";
+
+}

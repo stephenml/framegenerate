@@ -1,0 +1,16 @@
+package %|group|%.utils;
+
+import %|group|%.constant.Constants;
+import %|group|%.core.utils.PropertyUtil;
+
+/**
+ * 获取目录工具类
+ */
+public class PathUtil {
+
+    /** 资源上传根目录路径 */
+    public static String UPLOAD_BASE_PATH = PropertyUtil.getProperty(Constants.PRONAME_UPLOAD_DIR);
+    /** 资源上传根目录url */
+    public static String UPLOAD_BASE_URL = PropertyUtil.getProperty(Constants.PRONAME_UPLOAD_DOMAIN);
+
+}

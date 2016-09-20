@@ -1,0 +1,31 @@
+# mysql
+db.develop.url      = jdbc:mysql://%|developDatabaseIP|%:%|developDatabaseProt|%/%|developDatabase|%
+db.develop.username = %|developDatabaseUser|%
+db.develop.password = %|developDatabasePassword|%
+
+db.release.url      = jdbc:mysql://%|releaseDatabaseIP|%:%|releaseDatabaseProt|%/%|releaseDatabase|%
+db.release.username = %|releaseDatabaseUser|%
+db.release.password = %|releaseDatabasePassword|%
+
+# druid
+druid.filters                                   = stat
+druid.initialSize                               = 10
+druid.maxActive                                 = 50
+druid.maxPoolPreparedStatementPerConnectionSize = 20
+druid.maxWait                                   = 60000
+druid.minEvictableIdleTimeMillis                = 300000
+druid.minIdle                                   = 10
+druid.poolPreparedStatements                    = true
+druid.testOnBorrow                              = false
+druid.testOnReturn                              = false
+druid.testWhileIdle                             = true
+druid.timeBetweenEvictionRunsMillis             = 60000
+druid.validationQuery                           = SELECT 'x'
+
+# redis
+redis.dbIndex           = 0
+redis.ip                = 127.0.0.1
+redis.pool.maxIdle      = 200
+redis.pool.maxTotal     = 1024
+redis.pool.testOnBorrow = true
+redis.port              = 6379

@@ -1,0 +1,55 @@
+package %|group|%.core.utils;
+
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+/**
+ * 序列化工具
+ */
+public class SerializeUtil {
+
+	public static Logger logger = LoggerFactory.getLogger(SerializeUtil.class);
+
+	public static byte[] serialize(Object object) {
+		if (object == null) {
+			return null;
+		}
+		ObjectOutputStream objectOutputStream = null;
+		ByteArrayOutputStream byteArrayOutputStream = null;
+		try {
+			byteArrayOutputStream = new ByteArrayOutputStream();
+			objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+			objectOutputStream.writeObject(object);
+			byte[] bytes = byteArrayOutputStream.toByteArray();
+			return bytes;
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		} finally {
+			IOUtils.closeQuietly(byteArrayOutputStream);
+			IOUtils.closeQuietly(objectOutputStream);
+		}
+		return null;
+	}
+
+	public static Object unserialize(byte[] bytes) {
+		if (bytes == null) {
+			return null;
+		}
+		ByteArrayInputStream byteArrayInputStream = null;
+		try {
+			byteArrayInputStream = new ByteArrayInputStream(bytes);
+			ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
+			return objectInputStream.readObject();
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+		return null;
+	}
+
+}

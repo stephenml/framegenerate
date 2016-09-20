@@ -1,0 +1,13 @@
+# 开发环境
+domain.css = http://%|developIP|%:%|developProt|%/resource/css
+domain.images = http://%|developIP|%:%|developProt|%/resource/img
+domain.js = http://%|developIP|%:%|developProt|%/resource/js
+domain.upload = http://%|developIP|%:%|developProt|%/upload
+upload.dir = %|developUpload|%
+
+# 发布环境
+#domain.css = http://%|releaseIP|%/resource/css
+#domain.images = http://%|releaseIP|%/resource/img
+#domain.js = http://%|releaseIP|%/resource/js
+#domain.upload = http://%|releaseIP|%/upload
+#upload.dir = %|releaseUpload|%

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8" lang="zh-CN"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="zh-CN"> <![endif]-->
+<!--[if !IE]><!--> <html lang="zh-CN"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>%|name|%</title>
+        <link rel="stylesheet" href="resource/css/main.css"/>
+        <link rel="stylesheet" href="resource/css/font-awesome/css/font-awesome.css"/>
+    </head>
+    <body>
+    <!-- container -->
+    <div id="container" class="container">
+        <div id="header" class="header">
+            <!-- 页眉 -->
+        </div>
+        <div id="content" class="content">
+            <!-- 内容 -->
+        </div>
+        <div id="footer" class="footer">
+            <!-- 页脚 -->
+        </div>
+    </div>
+    <!-- container end-->
+    <script type="text/javascript" src="$!{ctx}/resource/js/modules/common/all.js"></script>
+        #seajs("root", ["main/main"])
+    </body>
+</html>

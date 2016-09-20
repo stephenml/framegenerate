@@ -1,0 +1,35 @@
+define(function(require, exports, module) {
+
+	window.app = new Marionette.Application();
+	
+	app.view = new (Marionette.LayoutView.extend({
+		el : 'body',
+		regions : {
+			content : '#content'
+		},
+		events : {
+
+		}
+	}))();
+
+	/** 分页视图 */
+	app.page = require('../common/view-page.js');
+	/** 加载提示 */
+	app.tips = require('../common/view-tips.js');
+	/** 空页面 */
+	app.emptyView = require('../common/view-empty.js');
+
+	/** 加载路由 */
+	require('./router.js');
+
+	Backbone.history.start();
+	
+	app.on('start', function () {
+		if (!location.hash) {
+			app.router.navigate('index', true);
+		}
+	});
+	
+	app.start();
+
+});

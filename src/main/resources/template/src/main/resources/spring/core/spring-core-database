@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+		  init-method="init" 
+		  destroy-method="close"
+		  p:url="${db.release.url}"
+		  p:username="${db.release.username}"
+		  p:password="${db.release.password}"
+		  p:initialSize="${druid.initialSize}"
+		  p:minIdle="${druid.minIdle}"
+		  p:maxActive="${druid.maxActive}"
+		  p:maxWait="${druid.maxWait}"
+		  p:validationQuery="${druid.validationQuery}"
+		  p:testWhileIdle="${druid.testWhileIdle}"
+		  p:testOnBorrow="${druid.testOnBorrow}"
+		  p:testOnReturn="${druid.testOnReturn}"
+		  p:timeBetweenEvictionRunsMillis="${druid.timeBetweenEvictionRunsMillis}"
+		  p:minEvictableIdleTimeMillis="${druid.minEvictableIdleTimeMillis}"
+		  p:poolPreparedStatements="${druid.poolPreparedStatements}"
+		  p:maxPoolPreparedStatementPerConnectionSize="${druid.maxPoolPreparedStatementPerConnectionSize}"
+		  p:filters="${druid.filters}"/>
+	
+	<!-- MyBatis配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis/mybatis-config.xml"/>
+
+	<!-- 扫描以@MyBatisMapper标识的 接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+		p:sqlSessionFactoryBeanName="sqlSessionFactory"
+		p:annotationClass="%|group|%.core.mybatis.annotation.MyBatisMapper"
+		p:basePackage="%|group|%.**.mapper"/>
+
+</beans>

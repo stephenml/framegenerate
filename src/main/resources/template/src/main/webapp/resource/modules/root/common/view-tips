@@ -1,0 +1,287 @@
+define(function(require, exports, module) {
+
+    var _tips = [], _target = null, _tmp = null, _initconfig = {}, _tmpconfig = {};
+
+    /**
+     * 生成guid
+     * @returns {string}
+     */
+    var newGuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+
+    /**
+     * 自定义提示
+     * @param target 目标元素 jquery
+     * @param options 自定义poshytip参数 obj
+     */
+    var show = function (target, options) {
+        close(); /** 先关闭之前的提示 */
+        if (_target != null && _tmp == null) {
+            target = _target;
+        }
+
+        if (_tmp != null) target = _tmp;
+
+        var custom = {
+            id : 'tips-' + newGuid().replace(/-/g, ''),
+            zIndex : 0,
+            showlayer : true,
+            layer : '<div id="{id}" class="tip-layer" {style}></div>'
+        };
+
+        var _default = {
+            className : 'tip',
+            showTimeout : 1,
+            alignTo : 'target',
+            alignX : 'center',
+            alignY : 'center',
+            showOn : 'none',
+            fade : true,
+            slide : true,
+            showlayer : true,
+            timeOnScreen : 2000, /** 显示时间 */
+            content : '<i class="fa fa-check-circle"></i>提示信息!'
+        };
+
+        target = target || $('body');
+        var config = $.extend(_default, _initconfig, _tmpconfig, options);
+
+        if (custom.showlayer) {
+            if (custom.zIndex != 0) {
+                target.append(custom.layer.replace('{id}', custom.id).replace('{style}', 'style="z-index:' + custom.zIndex+ '"'));
+            } else {
+                target.append(custom.layer.replace('{id}', custom.id).replace('{style}', ''));
+            }
+        }
+
+        seajs.use('jquery-poshytip', function () {
+            var _last = $('#' + custom.id).poshytip(config);
+            _last.poshytip('show');
+            _tips.push(_last);
+            if (tmp != null) {
+                _tmp = null;
+                _tmpconfig = {};
+            }
+        });
+    };
+
+    /**
+     * 信息提示
+     * @param msg
+     * @param target
+     * @param zIndex
+     */
+    var info = function (msg, target, zIndex) {
+        var config = {
+            className : 'tip-help',
+            content : '<i class="fa fa-info-circle"></i>' + msg
+        };
+
+        if (zIndex) config.zIndex = zIndex;
+        if (target) _tmp = target;
+
+        show(target, config);
+    };
+
+    /**
+     * 成功提示
+     * @param msg
+     * @param target
+     * @param zIndex
+     */
+    var success = function (msg, target, zIndex) {
+        var config = {
+            className : 'tip-success',
+            content : '<i class="fa fa-check-circle"></i>' + msg
+        };
+
+        if (zIndex) config.zIndex = zIndex;
+        if (target) _tmp = target;
+
+        show(target, config);
+    };
+
+    /**
+     * 警告提示
+     * @param msg
+     * @param target
+     * @param zIndex
+     */
+    var warning = function (msg, target, zIndex) {
+        var config = {
+            className : 'tip-warn',
+            content : '<i class="fa fa-exclamation-circle"></i>' + msg
+        };
+
+        if (zIndex) config.zIndex = zIndex;
+        if (target) _tmp = target;
+
+        show(target, config);
+    };
+
+    /**
+     * 错误提示
+     * @param msg
+     * @param target
+     * @param zIndex
+     */
+    var error = function (msg, target, zIndex) {
+        var config = {
+            className : 'tip-error',
+            content : '<i class="fa fa-times-circle"></i>' + msg
+        };
+
+        if (zIndex) config.zIndex = zIndex;
+        if (target) _tmp = target;
+
+        show(target, config);
+    };
+
+    /**
+     * loading
+     * @description 需要手动调用close方法关闭
+     * @param options
+     *          配置
+     *          type : loading类型 image、text(默认)
+     *          target : 目标元素 jquery
+     *          msg : 显示文本
+     *          zIndex: 默认无
+     */
+    var loading = function (options) {
+        var config = $.extend({}, options, {
+            timeOnScreen : 0,
+            className : 'tip-loading',
+            content : '<div class="loading"><i class="fa fa-spinner fa-pulse"></i></div>正在加载 . . .'
+        });
+
+        if (config.target) _tmp = config.target;
+
+        show(config.target, config);
+    };
+
+    /**
+     * ajax response
+     * @param response
+     * @param target
+     * @param zIndex
+     */
+    var response = function (response, target, zIndex) {
+        if (response.status == 200) {
+            success(response.msg, target, zIndex);
+        } else if (400 <= response.status && response.status < 500) {
+            error("服务器拒绝请求", target, zIndex);
+        } else if (response.responseJSON) {
+            error(response.responseJSON.error.message, target, zIndex);
+        } else {
+            error("未知错误", target, zIndex);
+        }
+    };
+
+    /**
+     * 帮助提示 在需要绑定帮助提示的元素的父节点添加 <div class="tips-outer" style="display: inline-block;"></div>
+     * @param msg
+     * @param target
+     * @param location
+     * @param options
+     */
+    var helper = function (msg, target, location, options) {
+        var _default = {
+            className : 'tip-twitter',
+            showTimeout : 1,
+            alignTo : 'target',
+            alignX : 'center',
+            offsetX : 10,
+            offsetY : 6,
+            allowTipHover : false,
+            fade : true,
+            slide : false,
+            liveEvents: true
+        };
+
+        var config = $.extend(_default, {content: msg});
+        if (location) {
+            switch (location) {
+                case 'left':
+                    config = $.extend(config, {
+                        alignTo : 'target',
+                        alignX : 'left',
+                        alignY : 'center'
+                    });
+                    break;
+                case 'right':
+                    config = $.extend(config, {
+                        alignTo: 'target',
+                        alignX: 'right',
+                        alignY: 'center'
+                    });
+                    break;
+                case 'top':
+                    config = $.extend(config, {
+                        alignTo: 'target',
+                        alignX: 'center',
+                        alignY: 'top'
+                    });
+                    break;
+                case 'bottom':
+                    config = $.extend(config, {
+                        alignTo: 'target',
+                        alignX: 'center',
+                        alignY: 'bottom'
+                    });
+                    break;
+            }
+        }
+
+        config = $.extend(config, options);
+
+        seajs.use('jquery-poshytip', function () {
+            target.poshytip(config);
+        });
+    };
+
+    /**
+     * 关闭tip
+     */
+    var close = function () {
+        if (_tips.length > 0) {
+            _tips.pop().poshytip('destroy');
+            $('.tip-loading').remove();
+        }
+    };
+
+    /**
+     * 初始化
+     * @param target
+     * @param options
+     * @returns {init}
+     */
+    var init = function (target, options) {
+        _target = target;
+        _initconfig = options;
+        return this;
+    };
+
+    var tmp = function (target, options) {
+        _tmp = target;
+        _tmpconfig = options;
+        return this;
+    };
+
+    module.exports = {
+        init: init,
+        tmp: tmp,
+        show : show,
+        info : info,
+        success : success,
+        warning : warning,
+        error : error,
+        loading : loading,
+        response : response,
+        helper: helper,
+        close : close
+    }
+});

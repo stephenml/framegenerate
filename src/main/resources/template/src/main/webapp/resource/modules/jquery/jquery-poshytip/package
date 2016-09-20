@@ -1,0 +1,8 @@
+{
+    "name" : "jquery-poshytip",
+    "version" : "1.2",
+
+    "spm" : {
+    	"main" : "jquery-poshytip.js"
+    }
+}

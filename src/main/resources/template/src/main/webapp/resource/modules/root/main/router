@@ -1,0 +1,32 @@
+define(function(require, exports, module) {
+	
+	app.router = new (Backbone.Router.extend({
+		routes : {
+			'index(/:tab)' : 'index', /** 首页 */
+
+			'*path': 'loadJs'
+		},
+		/**
+		 * 加载js
+		 * @param path
+         */
+		loadJs : function (path) {
+			if (!path) return;
+			path = '../' + path;
+			var args = _.rest(arguments, 1);
+			require.async(path, function(module) {
+				module.init.apply(module, args);
+			});
+		},
+		/**
+		 * 首页
+		 */
+		index : function (tab) {
+			this.loadJs('index/index');
+			if (tab) {
+				console.log('tab : ' + tab);
+			}
+		}
+	}))();
+
+});

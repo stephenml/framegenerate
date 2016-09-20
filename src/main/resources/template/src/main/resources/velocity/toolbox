@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 写法参见 http://velocity.apache.org/tools/releases/2.0/config.xml.html -->
+
+<!-- 默认自带工具使用参见 http://velocity.apache.org/tools/releases/2.0/summary.html
+	Generic Tools:
+		AlternatorTool, ClassTool, ComparisonDateTool, ContextTool, ConversionTool,
+		DisplayTool, EscapeTool, FieldTool, LinkTool, MathTool, NumberTool, RenderTool,
+		ResourceTool, SortTool, XmlTool
+
+	View Tools:
+		AbstractSearchTool, BrowserTool, CookieTool, ImportTool, IncludeTool, LinkTool,
+		PagerTool, ParameterTool, ViewContextTool
+-->
+
+<tools>
+    <toolbox scope="request"/>
+    <toolbox scope="session"/>
+</tools>

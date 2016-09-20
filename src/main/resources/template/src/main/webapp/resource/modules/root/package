@@ -1,0 +1,15 @@
+{
+    "spm" : {
+        "output" : {
+            "relative" : [
+            	"main/main.js",
+
+                "index/index.js"
+            ]
+        },
+        "alias" : {
+            "jquery" : "jquery",
+            "jquery-poshytip" : "jquery-poshytip"
+        }
+    }
+}
