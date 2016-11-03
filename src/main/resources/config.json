@@ -400,59 +400,6 @@
 											"type" : "folder",
 											"files" : [
 												{
-													"name" : "font-awesome",
-													"type" : "folder",
-													"files" : [
-														{
-															"name" : "css",
-															"type" : "folder",
-															"files" : [
-																{
-																	"name" : "font-awesome.css",
-																	"type" : "file",
-																	"extension" : ""
-																}
-															]
-														},
-														{
-															"name" : "fonts",
-															"type" : "folder",
-															"files" : [
-																{
-																	"name" : "FontAwesome.otf",
-																	"type" : "file",
-																	"extension" : ""
-																},
-																{
-																	"name" : "fontawesome-webfont.eot",
-																	"type" : "file",
-																	"extension" : ""
-																},
-																{
-																	"name" : "fontawesome-webfont.svg",
-																	"type" : "file",
-																	"extension" : ""
-																},
-																{
-																	"name" : "fontawesome-webfont.ttf",
-																	"type" : "file",
-																	"extension" : ""
-																},
-																{
-																	"name" : "fontawesome-webfont.woff",
-																	"type" : "file",
-																	"extension" : ""
-																},
-																{
-																	"name" : "fontawesome-webfont.woff2",
-																	"type" : "file",
-																	"extension" : ""
-																}
-															]
-														}
-													]
-												},
-												{
 													"name" : "main",
 													"type" : "file",
 													"extension" : "css"
