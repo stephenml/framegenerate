@@ -8,11 +8,11 @@ db.release.username = %|releaseDatabaseUser|%
 db.release.password = %|releaseDatabasePassword|%
 
 # mongoDB
-mongo.develop.url              = localhost
+mongo.develop.host             = localhost
 mongo.develop.port             = 27017
 mongo.develop.database         = %|developMongoDatabase|%
 
-mongo.release.url              = localhost
+mongo.release.host             = localhost
 mongo.release.port             = 27017
 mongo.release.database         = %|releaseMongoDatabase|%
 

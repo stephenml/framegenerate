@@ -16,7 +16,7 @@
 		  p:username="${db.develop.username}"
 		  p:password="${db.develop.password}"/>
 
-	<mongo:mongo host="${mongo.develop.url}" port="${mongo.develop.port}"/>
+	<mongo:mongo host="${mongo.develop.host}" port="${mongo.develop.port}"/>
 
 	<mongo:db-factory dbname="${mongo.develop.database}" mongo-ref="mongo"/>
 
