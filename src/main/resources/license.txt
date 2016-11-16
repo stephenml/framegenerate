@@ -1,5 +1,5 @@
 /**
- * Create By Frame Generate on %|date|%.
+ * Created by Frame Generate on %|date|%.
  * https://github.com/stephenml/framegenerate
  *
  * The MIT License (MIT)

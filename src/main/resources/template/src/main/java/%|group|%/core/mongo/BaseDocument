@@ -1,0 +1,34 @@
+package %|group|%.core.mongo;
+
+import com.alibaba.fastjson.JSON;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
+
+@Document()
+public abstract class BaseDocument<ID> implements Serializable {
+
+    @Id
+    private ID id;
+
+    public ID getId() {
+        return id;
+    }
+
+    public void setId(ID id) {
+        this.id = id;
+    }
+
+    public BaseDocument() {}
+
+    public BaseDocument(ID id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
+
+}

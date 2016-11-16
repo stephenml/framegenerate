@@ -7,6 +7,15 @@ db.release.url      = jdbc:mysql://%|releaseDatabaseIP|%:%|releaseDatabaseProt|%
 db.release.username = %|releaseDatabaseUser|%
 db.release.password = %|releaseDatabasePassword|%
 
+# mongoDB
+mongo.develop.url              = localhost
+mongo.develop.port             = 27017
+mongo.develop.database         = %|developMongoDatabase|%
+
+mongo.release.url              = localhost
+mongo.release.port             = 27017
+mongo.release.database         = %|releaseMongoDatabase|%
+
 # druid
 druid.filters                                   = stat
 druid.initialSize                               = 10

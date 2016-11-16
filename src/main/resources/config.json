@@ -59,6 +59,22 @@
 													]
 												},
 												{
+													"name" : "mongo",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "BaseDocument",
+															"type" : "file",
+															"extension" : "java"
+														},
+														{
+															"name" : "BaseRepository",
+															"type" : "file",
+															"extension" : "java"
+														}
+													]
+												},
+												{
 													"name" : "mybatis",
 													"type" : "package",
 													"files" : [
@@ -141,6 +157,38 @@
 											]
 										},
 										{
+											"name" : "dao",
+											"type" : "package",
+											"files" : [
+												{
+													"name" : "common",
+													"type" : "package",
+													"files" : []
+												},
+												{
+													"name" : "mongo",
+													"type" : "package",
+													"files" : [
+														{
+															"name" : "entity",
+															"type" : "package",
+															"files" : []
+														},
+														{
+															"name" : "repository",
+															"type" : "package",
+															"files" : []
+														}
+													]
+												},
+												{
+													"name" : "table",
+													"type" : "package",
+													"files" : []
+												}
+											]
+										},
+										{
 											"name" : "utils",
 											"type" : "package",
 											"files" : [
@@ -197,6 +245,11 @@
 																	]
 																}
 															]
+														},
+														{
+															"name" : "common",
+															"type" : "package",
+															"files" : []
 														}
 													]
 												},
@@ -225,6 +278,11 @@
 																	"extension" : "java"
 																}
 															]
+														},
+														{
+															"name" : "common",
+															"type" : "package",
+															"files" : []
 														}
 													]
 												}
@@ -264,6 +322,17 @@
 																			"extension" : "xml"
 																		}
 																	]
+																}
+															]
+														},
+														{
+															"name" : "common",
+															"type" : "package",
+															"files" : [
+																{
+																	"name" : "mapper",
+																	"type" : "package",
+																	"files" : []
 																}
 															]
 														}
@@ -341,6 +410,11 @@
 												},
 												{
 													"name" : "spring-core-database",
+													"type" : "file",
+													"extension" : "xml"
+												},
+												{
+													"name" : "spring-core-mongo",
 													"type" : "file",
 													"extension" : "xml"
 												},

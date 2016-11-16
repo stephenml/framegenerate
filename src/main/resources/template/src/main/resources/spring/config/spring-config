@@ -20,6 +20,7 @@
     <!-- 引入其他文件 -->
     <import resource="classpath:spring/core/spring-core-common.xml"/>
     <import resource="classpath:spring/core/spring-core-database.xml"/>
+    <import resource="classpath:spring/core/spring-core-mongo.xml"/>
     <import resource="classpath:spring/core/spring-core-service.xml"/>
     <import resource="classpath:spring/core/spring-core-cache.xml"/>
 

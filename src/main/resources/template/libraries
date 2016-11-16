@@ -9,6 +9,7 @@ dependencies {
             'org.springframework:spring-context-support:4.0.6.RELEASE',
             'org.springframework:spring-tx:4.0.6.RELEASE',
             'org.springframework:spring-jdbc:4.0.6.RELEASE',
+            'org.springframework.data:spring-data-mongodb:1.2.1.RELEASE',
             'org.aspectj:aspectjweaver:1.7.4',
 
             /** apache */

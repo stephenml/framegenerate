@@ -2,15 +2,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xsi:schemaLocation="
 	 http://www.springframework.org/schema/beans
-	 http://www.springframework.org/schema/beans/spring-beans.xsd"
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/data/mongo
+     http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd"
 	profile="develop">
 
 	<!-- 开发数据库 -->
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		  p:url="${db.develop.url}"
 		  p:username="${db.develop.username}"
 		  p:password="${db.develop.password}"/>
-		  
+
+	<mongo:mongo host="${mongo.develop.url}" port="${mongo.develop.port}"/>
+
+	<mongo:db-factory dbname="${mongo.develop.database}" mongo-ref="mongo"/>
+
 </beans>

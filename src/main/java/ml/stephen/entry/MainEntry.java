@@ -4,7 +4,7 @@
  *
  * The MIT License (MIT)
  *
- * Copyright © 2016 Stephen Yang, http://stephen.ml
+ * Copyright © 2016 Stephen
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -41,23 +41,25 @@ public class MainEntry {
 
         /** 预设信息 */
         /** 开发环境 */
-        params.put("%|developIP|%", "127.0.0.1");
+        params.put("%|developIP|%", "localhost");
         params.put("%|developProt|%", "80");
-        params.put("%|developUpload|%", "/User/Stephen/Documents/upload");
-        params.put("%|developDatabaseIP|%", "192.168.100.150");
+        params.put("%|developUpload|%", "/User/Stephen/Upload");
+        params.put("%|developDatabaseIP|%", "localhost");
         params.put("%|developDatabaseProt|%", "3306");
         params.put("%|developDatabase|%", name);
         params.put("%|developDatabaseUser|%", "root");
         params.put("%|developDatabasePassword|%", "000000");
-        params.put("%|developLog|%", "/User/Stephen/Documents/log");
+        params.put("%|developMongoDatabase|%", name);
+        params.put("%|developLog|%", "/User/Stephen/Log");
         /** 发布环境 */
         params.put("%|releaseIP|%", "localhost");
         params.put("%|releaseUpload|%", "/usr/www/upload");
-        params.put("%|releaseDatabaseIP|%", "127.0.0.1");
+        params.put("%|releaseDatabaseIP|%", "localhost");
         params.put("%|releaseDatabaseProt|%", "3306");
         params.put("%|releaseDatabase|%", name);
         params.put("%|releaseDatabaseUser|%", "root");
         params.put("%|releaseDatabasePassword|%", "000000");
+        params.put("%|releaseMongoDatabase|%", name);
         params.put("%|releaseLog|%", "/usr/www/log");
 
         try {

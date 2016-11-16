@@ -20,6 +20,7 @@ define(function(require, exports, module) {
 		},
 		/**
 		 * 首页
+		 * @param tab
 		 */
 		index : function (tab) {
 			this.loadJs('index/index');
